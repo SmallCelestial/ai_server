@@ -1,7 +1,63 @@
 # Test your FastAPI endpoints
+# Run the server with: uvicorn main:app --reload
+# Optional env vars:
+#   APP_NAME="AI Server" APP_VERSION=0.2.0 ENVIRONMENT=local API_PREFIX="" CORS_ORIGINS="http://localhost:3000, http://127.0.0.1:3000"
 
+### Root
 GET http://127.0.0.1:8000/
 Accept: application/json
+
+###
+
+GET http://127.0.0.1:8000/hello/User
+Accept: application/json
+
+### Health
+GET http://127.0.0.1:8000/health/liveness
+Accept: application/json
+
+###
+GET http://127.0.0.1:8000/health/readiness
+Accept: application/json
+
+### Meta
+GET http://127.0.0.1:8000/info
+Accept: application/json
+
+### Utils - time
+GET http://127.0.0.1:8000/time
+Accept: application/json
+
+### Utils - echo GET
+GET http://127.0.0.1:8000/echo?q=abc&n=1
+Accept: application/json
+
+### Utils - echo POST
+POST http://127.0.0.1:8000/echo
+Content-Type: application/json
+
+{
+  "foo": "bar",
+  "nums": [1, 2, 3]
+}
+
+### Greet - structured greeting
+POST http://127.0.0.1:8000/greet
+Content-Type: application/json
+
+{
+  "name": "Mateusz",
+  "language": "pl"
+}
+
+### Notify background task
+POST http://127.0.0.1:8000/notify
+Content-Type: application/json
+
+{
+  "recipient": "admin@example.com",
+  "message": "Background task demo"
+}
 
 ###
 

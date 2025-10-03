@@ -1,13 +1,2 @@
-from fastapi import FastAPI
-
-app = FastAPI()
-
-
-@app.get("/")
-async def root():
-    return {"message": "Hello World"}
-
-
-@app.get("/hello/{name}")
-async def say_hello(name: str):
-    return {"message": f"Hello {name}"}
+# Entry point kept for compatibility. The actual application lives in app/main.py
+from app.main import app  # noqa: F401
