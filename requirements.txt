@@ -1,0 +1,15 @@
+# Requirements for the AI Server FastAPI application
+# Install with:
+#   python -m pip install -r requirements.txt
+# Run the app locally (from project root):
+#   uvicorn main:app --reload
+
+# Core web framework (includes Starlette and Pydantic v2 as dependencies)
+fastapi>=0.111,<1.0
+
+# ASGI server
+uvicorn[standard]>=0.30,<1.0
+
+# (Optional pins for explicit compatibility; FastAPI will install compatible versions automatically.)
+# starlette>=0.37,<0.41
+# pydantic>=2.6,<3
