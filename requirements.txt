@@ -12,4 +12,4 @@ uvicorn[standard]>=0.30,<1.0
 
 # (Optional pins for explicit compatibility; FastAPI will install compatible versions automatically.)
 # starlette>=0.37,<0.41
-# pydantic>=2.6,<3
+pydantic>=2.6,<3
