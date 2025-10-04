@@ -11,7 +11,7 @@ router = APIRouter()
 
 @router.get("/", response_model=Message, tags=["root"])
 async def root():
-    return Message(message="Hello World version 1.0.3")
+    return Message(message="Hello World version 1.0.4")
 
 
 @router.get("/hello/{name}", response_model=Message, tags=["root"])
